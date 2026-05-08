@@ -61,4 +61,7 @@ jobs:
 
     - name: list Docker container
       run: docker ps
+
+    - name: Get Runner Public IP
+      run: curl ifconfig.me
       
