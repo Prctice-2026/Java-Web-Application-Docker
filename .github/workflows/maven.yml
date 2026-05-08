@@ -23,4 +23,4 @@ jobs:
       run: mvn -B package --file pom.xml
 
     - name: list
-      run: la -al /home/runner/work/Java-Web-Application-Docker/Java-Web-Application-Docker/
+      run: ls -al /home/runner/work/Java-Web-Application-Docker/Java-Web-Application-Docker/
