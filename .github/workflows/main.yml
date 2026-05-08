@@ -1,0 +1,15 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - master
+jobs:
+  checkout:
+    runs-on: ubuntu-latest
+
+  steps:
+  - name: checkout
+  - uses: action/gitcheckout@v4
+
+  
