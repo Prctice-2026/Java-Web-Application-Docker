@@ -56,5 +56,9 @@ jobs:
     - name: List Images
       run: docker images
 
-    
+    - name: Run Docker Image
+      run: docker run -d -p 8080:8080 registory/java-web-app-docker-image:1
+
+    - name: list Docker container
+      run: docker ps
       
