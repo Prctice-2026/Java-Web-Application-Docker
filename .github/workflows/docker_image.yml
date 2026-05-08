@@ -33,7 +33,8 @@ jobs:
   List_Docker_Images:
 
     runs-on: ubuntu-latest
-
+    needs: build
+    
     steps:
     - name: Listing Docker images
       run: docker images
