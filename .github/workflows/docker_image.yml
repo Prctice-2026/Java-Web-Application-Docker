@@ -29,3 +29,14 @@ jobs:
       run: |
         docker build -t registory/java-web-app-docker-image:1 .
         docker images
+        
+  List_Docker_Images:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Listing Docker images
+      run: docker images
+
+    
+      
