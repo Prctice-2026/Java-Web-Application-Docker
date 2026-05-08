@@ -30,3 +30,6 @@ jobs:
 
     - name: list
       run: ls -al /home/runner/work/Java-Web-Application-Docker/Java-Web-Application-Docker/
+      
+    - name: cat gitleaks file
+      run: cat /home/runner/work/Java-Web-Application-Docker/Java-Web-Application-Docker/gitleaks-report.json
