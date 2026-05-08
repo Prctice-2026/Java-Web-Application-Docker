@@ -64,4 +64,10 @@ jobs:
 
     - name: Get Runner Public IP
       run: curl ifconfig.me
+
+    - name: Check Container Logs
+      run: docker logs $(docker ps -q)
+
+    - name: Test App Locally Inside Runner
+      run: curl http://localhost:8080
       
