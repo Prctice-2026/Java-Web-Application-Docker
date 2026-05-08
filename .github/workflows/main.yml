@@ -22,7 +22,6 @@ jobs:
         pwd
         touch f1.txt
         ls -al
-        top
         df -sh
         
       
