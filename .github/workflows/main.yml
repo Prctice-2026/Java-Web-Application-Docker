@@ -14,4 +14,12 @@ jobs:
 
     - name: Welcome MR.
       run: echo "Mohammad Dada Khalandar"
+
+    - name: Shell Command
+      run: |
+        echo "Hi Mohammad"
+        mkdir ABCD && cd ABCD
+        touch f1.txt
+        ls -al
+        
       
