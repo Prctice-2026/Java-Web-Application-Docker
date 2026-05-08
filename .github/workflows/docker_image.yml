@@ -29,6 +29,15 @@ jobs:
       run: |
         docker build -t registory/java-web-app-docker-image:1 .
         docker images
+
+    - name: Save Docker image
+      run: docker save registory/java-web-app-docker-image:1 -o image.tar
+
+    - name: Upload Artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: docker-image
+        path: image.tar
         
   List_Docker_Images:
 
@@ -36,7 +45,15 @@ jobs:
     needs: build
     
     steps:
-    - name: Listing Docker images
+    - name: Download Artifact
+      uses: actions/download-artifact@v4
+      with:
+        name: docker-image
+
+    - name: Load Docker Image
+      run: docker load -i image.tar
+
+    - name: List Images
       run: docker images
 
     
