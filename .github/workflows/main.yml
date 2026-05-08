@@ -19,6 +19,7 @@ jobs:
       run: |
         echo "Hi Mohammad"
         mkdir ABCD && cd ABCD
+        pwd
         touch f1.txt
         ls -al
         
