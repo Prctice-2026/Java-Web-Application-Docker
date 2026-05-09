@@ -13,7 +13,8 @@ env:
   # EKS variables
   EKS_CLUSTER_NAME: my-eks-cluster
   K8S_DEPLOYMENT_NAME: java-web-app-deployment
-  #K8S_CONTAINER_NAME: java-web-app-container
+  # Optional this is for check rollut status
+  K8S_CONTAINER_NAME: java-web-app-container
 
 jobs:
   build:
