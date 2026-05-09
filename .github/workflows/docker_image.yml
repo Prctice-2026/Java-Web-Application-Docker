@@ -3,6 +3,8 @@ name: Docker Image CI
 on:
   push:
     branches: [ "master" ]
+env:
+  IMAGE_TAG: ${{github.run_number}}
 
 jobs:
 
@@ -27,11 +29,11 @@ jobs:
     - name: Build the Docker image
       #run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
       run: |
-        docker build -t registory/java-web-app-docker-image:${{ github.sha }} .
+        docker build -t registory/java-web-app-docker-image:$IMAGE_TAG .
         docker images
 
     - name: Save Docker image
-      run: docker save registory/java-web-app-docker-image:1 -o image.tar
+      run: docker save registory/java-web-app-docker-image:$IMAGE_TAG -o image.tar
 
     - name: Upload Artifact
       uses: actions/upload-artifact@v4
@@ -57,7 +59,7 @@ jobs:
       run: docker images
 
     - name: Run Docker Image
-      run: docker run -d -p 8080:8080 registory/java-web-app-docker-image:1
+      run: docker run -d -p 8080:8080 registory/java-web-app-docker-image:$IMAGE_TAG
 
     - name: list Docker container
       run: docker ps
